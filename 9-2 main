@@ -5,9 +5,10 @@ using namespace std;
 
 int main()
 {
-	Rectangle rectangle1(6.9, 7.2);
-	Rectangle rectangle2(9.1, 5.6);
-	cin >> rectangle1.width >> rectangle1.height >> rectangle2.width >> rectangle2.height;
+	double x,y,z,w;
+	cin>>x>>y>>z>>w;
+	Rectangle rectangle1(x, y);
+	Rectangle rectangle2(z, w);
 
 	cout << setprecision(2) << fixed << rectangle1.getArea() << " " << rectangle1.getPerimeter() << endl;
 	cout << setprecision(2) << fixed << rectangle2.getArea() << " " << rectangle2.getPerimeter() << endl;
