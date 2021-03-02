@@ -1,0 +1,40 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+class Rectangle
+{
+public:
+	double width, height;
+	Rectangle()
+	{
+		width = 1;
+		height = 1;
+	}
+	Rectangle(double newWidth,double newHeight)
+	{
+		width = newWidth;
+		height = newHeight;
+	}
+	double getArea()
+	{
+		return width * height;
+	}
+	double getPerimeter()
+	{
+		return (width + height) * 2;
+	}
+};
+int main() 
+{
+	Rectangle rectangle1(6.9,7.2);
+	Rectangle rectangle2(9.1,5.6);
+	cin >> rectangle1.width >> rectangle1.height >> rectangle2.width >> rectangle2.height;
+
+	cout << setprecision(2) << fixed << rectangle1.getArea() << " " << rectangle1.getPerimeter() << endl;
+	cout << setprecision(2) << fixed << rectangle2.getArea() << " " << rectangle2.getPerimeter() << endl;
+	rectangle2.width = 2.5;
+	rectangle2.height = 5.0;
+	cout << setprecision(2) << fixed << rectangle2.getArea() << " " << rectangle2.getPerimeter() << endl;
+	return 0;
+}
