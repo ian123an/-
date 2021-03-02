@@ -1,0 +1,16 @@
+#include<iostream>
+#include<iomanip>
+#include<string>
+#include"BMI.h"
+using namespace std;
+
+int main()
+{
+	string n;
+	double x, y;
+	cin >> n >> x >> y;
+	BMI bmi(x, y);
+
+	cout << setprecision(2) << fixed << n << " " << bmi.getBMI() << endl;
+	return 0;
+}
