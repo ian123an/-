@@ -1,0 +1,21 @@
+#include<iostream>
+#include<iomanip>
+#include<string>
+#include"Score.h"
+using namespace std;
+
+int main()
+{
+	string n, x;
+	int m, y;
+	cin >> n >> m >> x >> y;
+	Score score1("John", 90);
+	Score score2("Mary", 85);
+
+	score1.setName(n);
+	score2.setMath(y);
+
+	cout << score1.getName() << " " << score1.getMath() << endl;
+	cout << score2.getName() << " " << score2.getMath() << endl;
+	return 0;
+}
