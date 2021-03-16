@@ -22,15 +22,15 @@ void Date::setYear(int y)
 {
 	year = y;
 }
-int Date::getMonth()
+int Date::getMonth() const
 {
 	return month;
 }
-int Date::getDay()
+int Date::getDay() const
 {
 	return day;
 }
-int Date::getYear()
+int Date::getYear() const
 {
 	return year;
 }
