@@ -1,0 +1,34 @@
+#include<iostream>
+#include "Rectangle.h"
+using namespace std;
+
+int sum(Rectangle rectArray[], int size)
+{
+	int tot = 0;
+	for (int i = 0;i < size;i++)
+	{
+		tot += rectArray[i].getArea();
+	}
+	return tot;
+}
+void printRectangleArray(Rectangle rectArray[], int size)
+{
+	for (int i = 0;i < size;i++)
+	{
+		cout << rectArray[i].getWidth() << " " << rectArray[i].getHeight() << " " << rectArray[i].getArea() << endl;
+	}
+}
+
+int main()
+{
+	Rectangle Array[4];
+	for (int i = 0;i < 4;i++)
+	{
+		int x, y;
+		cin >> x >> y;
+		Array[i].setWidth(x);
+		Array[i].setHeight(y);
+	}
+	printRectangleArray(Array, 4);
+	cout << "Total:" << sum(Array, 4) << endl;
+}
