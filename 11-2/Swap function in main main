@@ -3,6 +3,19 @@
 #include <iostream>
 using namespace std;
 
+void swapByReference(Rectangle &r1, Rectangle &r2)
+{
+	Rectangle a = r1;
+	r1 = r2;
+	r2 = a;
+}
+void swapByPointer(Rectangle *r1, Rectangle *r2)
+{
+	Rectangle a = *r1;
+	*r1 = *r2;
+	*r2 = a;
+}
+
 int main()
 {
 	double width, height;
@@ -10,10 +23,10 @@ int main()
 	Rectangle rect1(width, height);
 	cin >> width >> height;
 	Rectangle rect2(width, height);
-	cout << "SwapByReference:" << fixed << setprecision(2) << rect1.getArea() << " " << rect2.getArea();
-	rect1.swapByReference(rect2);
-	cout << " to " << fixed << setprecision(2) << rect1.getArea() << " " << rect2.getArea() << endl;
-	cout << "SwapByPointer:" << fixed << setprecision(2) << rect1.getArea() << " " <<  rect2.getArea();
-	rect1.swapByPointer(&rect2);
-	cout << " to " << fixed << setprecision(2) << rect1.getArea() << " " << rect2.getArea() << endl;
+	cout << "SwapByReference:" << fixed << setprecision(2) << rect1.getArea() << " " << fixed << setprecision(2) << rect2.getArea();
+	swapByReference(rect1, rect2);
+	cout << " to " << fixed << setprecision(2) << rect1.getArea() << " " << fixed << setprecision(2) << rect2.getArea() << endl;
+	cout << "SwapByPointer:" << fixed << setprecision(2) << rect1.getArea() << " " << fixed << setprecision(2) << rect2.getArea();
+	swapByPointer(&rect1, &rect2);
+	cout << " to " << fixed << setprecision(2) << rect1.getArea() << " " << fixed << setprecision(2) << rect2.getArea() << endl;
 }
