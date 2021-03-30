@@ -1,0 +1,19 @@
+#include "Rectangle.h"
+#include <iomanip>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	double width, height;
+	cin >> width >> height;
+	Rectangle rect1(width, height);
+	cin >> width >> height;
+	Rectangle rect2(width, height);
+	cout << "SwapByReference:" << fixed << setprecision(2) << rect1.getArea() << " " << rect2.getArea();
+	rect1.swapByReference(rect2);
+	cout << " to " << fixed << setprecision(2) << rect1.getArea() << " " << rect2.getArea() << endl;
+	cout << "SwapByPointer:" << fixed << setprecision(2) << rect1.getArea() << " " <<  rect2.getArea();
+	rect1.swapByPointer(&rect2);
+	cout << " to " << fixed << setprecision(2) << rect1.getArea() << " " << rect2.getArea() << endl;
+}
