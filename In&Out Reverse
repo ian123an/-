@@ -1,0 +1,40 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int *gList;
+int *reverse(const int list[], int size)
+{
+	gList = new int[size];
+	for (int i = 0, j = size - 1;i < size;i++, j--)
+	{
+		gList[i] = list[j];
+	}
+	return gList;
+}
+void print(const int list[], int size)
+{
+	for (int i = 0;i < size;i++)
+	{
+		cout << list[i];
+		(i != 4) ? (cout << ", ") : (cout << endl);
+	}
+}
+int main()
+{
+	int size = 5;
+	int list[5];
+	for (int i = 0;i < size;i++)
+	{
+		cin >> list[i];
+	}
+	cout << "From: ";
+	print(list, size);
+	gList = reverse(list, size);
+	cout << "*reverse: ";
+	for (int i = 0;i < size;i++)
+	{
+		cout << gList[i];
+		(i != 4) ? (cout << ", ") : (cout << endl);
+	}
+}
