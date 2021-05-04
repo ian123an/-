@@ -1,0 +1,54 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+template<typename T>
+void reverse(const T list[], T newList[], int size)
+{
+	for (int i = 0, j = size - 1;i < size;i++, j--)
+	{
+		newList[i] = list[j];
+	}
+}
+template<typename T>
+void print(T list[], int size)
+{
+	cout << "From: ";
+	for (int i = 0;i < 10;i++)
+	{
+		cout << list[i];
+		(i != 9) ? (cout << ", ") : (cout << endl);
+	}
+}
+int main()
+{
+	int list1[10];
+	double list2[10];
+	int newList1[10];
+	double newList2[10];
+	for (int i = 0;i < 10;i++)
+	{
+		cin >> list1[i];
+	}
+	for (int i = 0;i < 10;i++)
+	{
+		cin >> list2[i];
+	}
+	print(list1, 10);
+	reverse(list1, newList1, 10);
+	cout << "To: ";
+	for (int i = 0;i < 10;i++)
+	{
+		cout << newList1[i];
+		(i != 9) ? (cout << ", ") : (cout << endl);
+	}
+	cout << endl << endl;
+	print(list2, 10);
+	reverse(list2, newList2, 10);
+	cout << "To: ";
+	for (int i = 0;i < 10;i++)
+	{
+		cout << newList2[i];
+		(i != 9) ? (cout << ", ") : (cout << endl);
+	}
+}
