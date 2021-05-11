@@ -54,21 +54,21 @@ Rational Rational::subtract(const Rational& secondRational) const
 	return Rational(n, d);
 }
 
-Rational Rational::multiply(const Rational& secondRational) const
+Rational Rational::multiply(const Rational& secondRational) const //乘
 {
 	int n = numerator * secondRational.getNumerator();
 	int d = denominator * secondRational.getDenominator();
 	return Rational(n, d);
 }
 
-Rational Rational::divide(const Rational& secondRational) const
+Rational Rational::divide(const Rational& secondRational) const //除
 {
 	int n = numerator * secondRational.getDenominator();
 	int d = denominator * secondRational.numerator;
 	return Rational(n, d);
 }
 
-int Rational::compareTo(const Rational& secondRational) const
+int Rational::compareTo(const Rational& secondRational) const //比较两个变量并return -1、1或0，表示>，<和=
 {
 	Rational temp = subtract(secondRational);
 	if (temp.getNumerator() < 0)
@@ -79,7 +79,7 @@ int Rational::compareTo(const Rational& secondRational) const
 		return 1;
 }
 
-bool Rational::equals(const Rational& secondRational) const
+bool Rational::equals(const Rational& secondRational) const //將範圍內的元素進行比較
 {
 	if (compareTo(secondRational) == 0)
 		return true;
