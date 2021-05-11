@@ -97,7 +97,7 @@ double Rational::doubleValue() const
 	return 1.0 * getNumerator() / getDenominator();
 }
 
-string Rational::toString() const
+string Rational::toString() const //int 到 string 的轉換
 {
 	stringstream ss;
 	ss << numerator;
@@ -182,7 +182,7 @@ Rational Rational::operator-()
 	return Rational(-numerator, denominator);
 }
 
-ostream& operator<<(ostream& out, const Rational& rational)
+ostream& operator<<(ostream& out, const Rational& rational) //輸出物件資料
 {
 	if (rational.denominator == 1)
 		out << rational.numerator;
@@ -191,7 +191,7 @@ ostream& operator<<(ostream& out, const Rational& rational)
 	return out;
 }
 
-istream& operator>>(istream& in, Rational& rational)
+istream& operator>>(istream& in, Rational& rational) //將輸入的資訊直接指定給物件
 {
 	cout << "Enter numerator: ";
 	in >> rational.numerator;
