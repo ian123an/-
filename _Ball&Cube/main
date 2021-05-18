@@ -1,0 +1,21 @@
+#include"GeometricObject.h"
+#include"Cube.h"
+#include"Ball.h"
+#include<iostream>
+#include<string>
+#include<iomanip>
+using namespace std;
+
+int main() 
+{
+	double radius, length;
+	string colorC, colorB;
+	cin >> radius >> colorB >> length >> colorC;
+	Ball Ball(radius, colorB);
+	Cube Cube(length, colorC);
+	cout << "Ball" << endl;
+	cout << "radius:" << fixed << setprecision(1) << Ball.getRadius() << ", area:" << fixed << setprecision(1) << Ball.getArea() << ", volume:" << fixed << setprecision(1) << Ball.getVolume() << ", color:" << Ball.getColor() << endl;
+	cout << "Cube" << endl;
+	cout << "length:" << fixed << setprecision(1) << Cube.getLength() << ", area:" << fixed << setprecision(1) << Cube.getArea() << ", volume:" << fixed << setprecision(1) << Cube.getVolume() << ", color:" << Cube.getColor() << endl;
+	system("pause");
+}
