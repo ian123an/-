@@ -1,0 +1,21 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include "Cuboid.h"
+#include "Sphere.h"
+#include "Shape.h"
+int main()
+{
+	string Color1, Color2;
+	double radius, length, width, height;
+	cin >> radius >> Color1;
+	cin >> length >> width >> height >> Color2;
+	
+	Sphere sphere(radius, Color1);
+	Cuboid cuboid(length, width, height, Color2);
+	cout << sphere.toString() << ":(" << sphere.getRadius() << ")," << fixed << setprecision(1) << sphere.getVolume() << "," 
+		<< sphere.getColor() << endl;
+	cout << fixed << setprecision(0);
+	cout << cuboid.toString() << ":(" << cuboid.getLength() << "," << cuboid.getWidth() << "," << cuboid.getHeight()
+		<< ")," << fixed << setprecision(1) << cuboid.getVolume() << "," << cuboid.getColor() << endl;
+}
