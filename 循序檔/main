@@ -1,0 +1,19 @@
+#include <iostream>
+#include <fstream>
+#include "StuCard.h"
+using namespace std;
+
+int main()
+{
+	StuCard stu1("Jerry", 1, 80.0, 70.0, 90.0);
+	StuCard stu2("John", 1, 85.0, 77.0, 95.0);
+	StuCard stu3("Mary", 0, 83.0, 75.0, 70.0);
+	StuCard stu4("Tom", 1, 73.0, 95.0, 67.0);
+	StuCard stu5("Claire ", 0, 88.0, 79.0, 71.0);
+	stu1.writeToFile();
+	stu2.writeToFile();
+	stu3.writeToFile();
+	stu4.writeToFile();
+	stu5.writeToFile();
+	stu1.readFromFile();
+}
